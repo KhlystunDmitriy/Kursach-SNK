@@ -128,8 +128,9 @@ riscv_compliance: | $(bld_dir)
 
 hello: | $(bld_dir)
 	-$(MAKE) -C $(tst_dir)/hello EXT_CFLAGS="$(EXT_CFLAGS)" ARCH=$(ARCH)
-log: | $(bld_dir)
-    $(MAKE) -C $(tst_dir)/log ARCH=$(ARCH)
+
+log:| $(bld_dir)
+	-$(MAKE) -C $(tst_dir)/log ARCH=$(ARCH)
 
 clean_hex: | $(bld_dir)
 	$(RM) $(bld_dir)/*.hex
